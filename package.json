@@ -1,0 +1,44 @@
+{
+  "name": "frain-points",
+  "version": "0.2.0",
+  "description": "A package for applying Chaikin (ish) algorithm on polygon points",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "ts-jest --coverage",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhilipEnglund/frain-points.git"
+  },
+  "keywords": [
+    "ts",
+    "polygons",
+    "chaikin",
+    "web-gl"
+  ],
+  "author": "Philip Englund",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PhilipEnglund/frain-points/issues"
+  },
+  "homepage": "https://github.com/PhilipEnglund/frain-points#readme",
+  "devDependencies": {
+    "typescript": "^4.3.5",
+    "prettier": "^2.3.2",
+    "eslint": "^7.32.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^27.0.6",
+    "@types/jest": "^26.0.24",
+    "ts-jest": "^27.0.4"
+  },
+  "eslintConfig": {
+    "plugins": [
+      "prettier"
+    ]
+  }
+}
