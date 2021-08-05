@@ -3,7 +3,7 @@ export namespace Fp {
   function lerp([p1x, p1y]: Point, [p2x, p2y]: Point, t: number): Point {
     return [(1 - t) * p1x + t * p2x, (1 - t) * p1y + t * p2y];
   }
-  export function multiply({
+  export function smoothen({
     originalPoints,
     radius = 0.5,
   }: {

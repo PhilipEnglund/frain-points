@@ -10,9 +10,9 @@ const mockPoints = [
 ] as Array<Fp.Point>;
 
 describe('Fp', () => {
-  describe('multiply', () => {
+  describe('smoothen', () => {
     it('should return an array of points based on original set of points', () => {
-      const [[p1x, p1y], p2, ...newPoints] = Fp.multiply({
+      const [[p1x, p1y], p2, ...newPoints] = Fp.smoothen({
         originalPoints: mockPoints,
       });
       expect(p1x).toEqual(12.5);
@@ -23,7 +23,7 @@ describe('Fp', () => {
   });
   it('should throw an error if radius in not between range of 0.1-0.5', () => {
     try {
-      Fp.multiply({ originalPoints: mockPoints, radius: 0.6 });
+      Fp.smoothen({ originalPoints: mockPoints, radius: 0.6 });
     } catch (e) {
       expect(e.message.includes("can't be less than 0.1 or higher than 0.5"));
     }
