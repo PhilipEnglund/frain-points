@@ -25,10 +25,11 @@ var Fp;
         if (radius > 0.5 || radius < 0.1) {
             throw new Error("Param 'options' can't be less than 0.1 or higher than 0.5");
         }
-        return __spreadArray([], originalPoints).reduce(function (acc, point, i, points) { return __spreadArray(__spreadArray(__spreadArray([], acc), [
-            lerp(point, i === 0 ? points[points.length - 1] : points[i - 1], radius),
-            point
-        ]), lerp(point, i === points.length - 1 ? points[0] : points[i + 1], radius)); }, []);
+        return __spreadArray([], originalPoints).reduce(function (acc, point, i, points) { return __spreadArray(__spreadArray([], acc), [
+            lerp(point, i === 0 ? points[points.length - 1] : points[i - 1], radius || 0.5),
+            point,
+            lerp(point, i === points.length - 1 ? points[0] : points[i + 1], radius || 0.5),
+        ]); }, []);
     }
     Fp.smoothen = smoothen;
 })(Fp = exports.Fp || (exports.Fp = {}));

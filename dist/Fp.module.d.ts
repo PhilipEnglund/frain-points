@@ -1,9 +1,9 @@
 export declare namespace Fp {
     /**
      * @type Point
-     * @description Array Tuple representing x and y coordinates
+     * @description Two-dimensional array representing x and y coordinates
      */
-    type Point = [number, number];
+    type Point = number[];
     /**
      * @function smoothen
      * @description Takes original points and returns a new array of points, applying
