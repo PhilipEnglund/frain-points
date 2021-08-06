@@ -33,3 +33,5 @@ rest.forEach(([x, y], i, points) => {
   );
 });
 ```
+
+Working example on [Codesandbox](https://codesandbox.io/s/eloquent-drake-zyymz)
