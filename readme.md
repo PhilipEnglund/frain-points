@@ -8,6 +8,7 @@ import Fp from 'frain-points';
 
 const canvas = document.querySelector('#glCanvas');
 const context = canvas.getContext('2d');
+context.fillStyle = "rgb(40,0,0)";
 
 const originalPoints = [
   [25, 25],
@@ -32,6 +33,8 @@ rest.forEach(([x, y], i, points) => {
     (y + nextY) / 2,
   );
 });
+
+context.fill();
 ```
 
 Working example on [Codesandbox](https://codesandbox.io/s/eloquent-drake-zyymz)
