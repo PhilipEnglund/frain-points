@@ -1,9 +1,9 @@
 export namespace Fp {
   /**
    * @type Point
-   * @description Array Tuple representing x and y coordinates
+   * @description Two-dimensional array representing x and y coordinates
    */
-  export type Point = [number, number];
+  export type Point = number[];
   function lerp([p1x, p1y]: Point, [p2x, p2y]: Point, t: number): Point {
     return [(1 - t) * p1x + t * p2x, (1 - t) * p1y + t * p2y];
   }
@@ -40,6 +40,6 @@ export namespace Fp {
         ),
       ],
       []
-    );
+    ) as Array<Point>;
   }
 }
