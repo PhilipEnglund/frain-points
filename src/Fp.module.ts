@@ -30,13 +30,13 @@ export namespace Fp {
         lerp(
           point,
           i === 0 ? points[points.length - 1] : points[i - 1],
-          radius
+          radius || 0.5
         ),
         point,
-        ...lerp(
+        lerp(
           point,
           i === points.length - 1 ? points[0] : points[i + 1],
-          radius
+          radius || 0.5
         ),
       ],
       []
