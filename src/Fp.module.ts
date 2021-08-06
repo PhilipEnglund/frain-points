@@ -15,7 +15,7 @@ export namespace Fp {
         "Param 'options' can't be less than 0.1 or higher than 0.5"
       );
     }
-    return originalPoints.reduce(
+    return [...originalPoints].reduce(
       (acc, point, i, points) => [
         ...acc,
         lerp(
