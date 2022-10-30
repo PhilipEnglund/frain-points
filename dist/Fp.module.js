@@ -1,8 +1,12 @@
 "use strict";
-var __spreadArray = (this && this.__spreadArray) || function (to, from) {
-    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
-        to[j] = from[i];
-    return to;
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
 };
 exports.__esModule = true;
 exports.Fp = void 0;
@@ -25,11 +29,11 @@ var Fp;
         if (radius > 0.5 || radius < 0.1) {
             throw new Error("Param 'options' can't be less than 0.1 or higher than 0.5");
         }
-        return __spreadArray([], originalPoints).reduce(function (acc, point, i, points) { return __spreadArray(__spreadArray([], acc), [
+        return __spreadArray([], originalPoints, true).reduce(function (acc, point, i, points) { return __spreadArray(__spreadArray([], acc, true), [
             lerp(point, i === 0 ? points[points.length - 1] : points[i - 1], radius || 0.5),
             point,
             lerp(point, i === points.length - 1 ? points[0] : points[i + 1], radius || 0.5),
-        ]); }, []);
+        ], false); }, []);
     }
     Fp.smoothen = smoothen;
 })(Fp = exports.Fp || (exports.Fp = {}));

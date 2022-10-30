@@ -1,6 +1,6 @@
 {
   "name": "frain-points",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A package for applying Chaikin (ish) algorithm on polygon points",
   "main": "dist/index.js",
   "scripts": {
