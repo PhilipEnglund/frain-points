@@ -1,4 +1,4 @@
-import Fp from '../src';
+import Fp from "../src";
 
 const mockPoints = [
   [25, 25],
@@ -9,9 +9,9 @@ const mockPoints = [
   [0, 100],
 ] as Array<Fp.Point>;
 
-describe('Fp', () => {
-  describe('smoothen', () => {
-    it('should return an array of points based on original set of points', () => {
+describe("Fp", () => {
+  describe("smoothen", () => {
+    it("should return an array of points based on original set of points", () => {
       const [[p1x, p1y], p2, ...newPoints] = Fp.smoothen(mockPoints);
       expect(p1x).toEqual(12.5);
       expect(p1y).toEqual(62.5);
@@ -19,7 +19,7 @@ describe('Fp', () => {
       expect(newPoints.length > mockPoints.length).toBeTruthy();
     });
   });
-  it('should throw an error if radius in not between range of 0.1-0.5', () => {
+  it("should throw an error if radius in not between range of 0.1-0.5", () => {
     try {
       Fp.smoothen(mockPoints, 0.6);
     } catch (e) {
